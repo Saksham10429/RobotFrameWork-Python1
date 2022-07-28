@@ -18,3 +18,4 @@ ${AnotherProduct}=   xpath://li[@title='Mi Smart Band 5']//a[@class='btn btn-buy
 ${Nextbutton}=  xpath://a[normalize-space()='Next']
 ${Delete}=  xpath://*[@class='cart__footer-delete']
 ${ConfirmDelete}=  xpath://div[@class='mi-modal__button mi-modal__button--confirm']
+

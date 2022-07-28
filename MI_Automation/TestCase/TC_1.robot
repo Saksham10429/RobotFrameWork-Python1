@@ -12,5 +12,5 @@ Search the product from search bar
 Add the product to the cart 
     Add Product to cart
 Delete the product from cart
-    Delete the Product from cart
+    Delete the Product from cart option
   

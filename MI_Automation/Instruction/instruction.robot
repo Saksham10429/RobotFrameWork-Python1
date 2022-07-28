@@ -35,3 +35,4 @@ Delete the Product from cart
     Click Button  ${Delete}
     Sleep  3s
     Click Element  ${ConfirmDelete}
+    Sleep  3s
