@@ -1,216 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220727 13:22:39.442" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220802 17:08:21.822" rpa="false" schemaversion="3">
 <suite id="s1" name="TC 1" source="C:\Users\user\PycharmProjects\MI_Automation\TestCase\TC_1.robot">
-<test id="s1-t1" name="Open the MI website" line="6">
-<kw name="Open The Browser and Url" library="instruction">
+<test id="s1-t1" name="Check the Login Functionality of MI website" line="6">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220802 17:08:22.166" endtime="20220802 17:08:22.166"/>
+</kw>
+<kw name="Open The Browser and Url" library="Resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220802 17:08:22.168" endtime="20220802 17:08:22.169"/>
+</kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220727 13:22:40.117" level="INFO">Opening browser 'chrome' to base url 'https://www.mi.com/in/'.</msg>
-<status status="PASS" starttime="20220727 13:22:40.116" endtime="20220727 13:22:48.020"/>
+<msg timestamp="20220802 17:08:22.170" level="INFO">Opening browser 'chrome' to base url 'https://www.mi.com/in/'.</msg>
+<status status="PASS" starttime="20220802 17:08:22.169" endtime="20220802 17:08:32.477"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220727 13:22:48.021" endtime="20220727 13:22:48.238"/>
+<status status="PASS" starttime="20220802 17:08:32.477" endtime="20220802 17:08:33.682"/>
 </kw>
-<status status="PASS" starttime="20220727 13:22:40.115" endtime="20220727 13:22:48.239"/>
+<status status="PASS" starttime="20220802 17:08:22.168" endtime="20220802 17:08:33.682"/>
 </kw>
-<status status="PASS" starttime="20220727 13:22:40.112" endtime="20220727 13:22:48.240"/>
-</test>
-<test id="s1-t2" name="Log-in to the MI website" line="8">
-<kw name="Sigin to the website" library="instruction">
+<kw name="Signin to the website" library="Resource">
 <kw name="Click Link" library="SeleniumLibrary">
-<arg>${Sigin}</arg>
+<arg>${Signin}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:48.250" level="INFO">Clicking link 'xpath://*[@id="J_signEntries"]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20220727 13:22:48.246" endtime="20220727 13:22:48.481"/>
+<msg timestamp="20220802 17:08:33.686" level="INFO">Clicking link 'xpath://*[@id="J_signEntries"]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20220802 17:08:33.682" endtime="20220802 17:08:36.826"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:22:51.490" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:22:48.481" endtime="20220727 13:22:51.490"/>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Forgot password?</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220802 17:08:36.826" endtime="20220802 17:08:39.969"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Username}</arg>
-<arg>Saksham10429@gmail.com</arg>
+<arg>${user1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:51.491" level="INFO">Typing text 'Saksham10429@gmail.com' into text field 'xpath://input[@type='text']'.</msg>
-<status status="PASS" starttime="20220727 13:22:51.491" endtime="20220727 13:22:53.326"/>
+<msg timestamp="20220802 17:08:39.969" level="INFO">Typing text 'saksham10429@gmail.com' into text field 'xpath://input[@type='text']'.</msg>
+<status status="PASS" starttime="20220802 17:08:39.969" endtime="20220802 17:08:43.485"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Password}</arg>
-<arg>Abcd@123</arg>
+<arg>${pass1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:53.327" level="INFO">Typing text 'Abcd@123' into text field 'xpath://input[@type='password']'.</msg>
-<status status="PASS" starttime="20220727 13:22:53.326" endtime="20220727 13:22:54.227"/>
+<msg timestamp="20220802 17:08:43.487" level="INFO">Typing text 'Abcd@123' into text field 'xpath://input[@type='password']'.</msg>
+<status status="PASS" starttime="20220802 17:08:43.485" endtime="20220802 17:08:46.761"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ClicktoLogin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:54.228" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
-<status status="PASS" starttime="20220727 13:22:54.227" endtime="20220727 13:22:54.454"/>
+<msg timestamp="20220802 17:08:46.761" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220802 17:08:46.761" endtime="20220802 17:08:48.909"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:22:57.459" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:22:54.454" endtime="20220727 13:22:57.459"/>
+<status status="PASS" starttime="20220802 17:08:33.682" endtime="20220802 17:08:48.909"/>
 </kw>
-<status status="PASS" starttime="20220727 13:22:48.245" endtime="20220727 13:22:57.460"/>
-</kw>
-<status status="PASS" starttime="20220727 13:22:48.243" endtime="20220727 13:22:57.461"/>
+<status status="PASS" starttime="20220802 17:08:22.165" endtime="20220802 17:08:48.910"/>
 </test>
-<test id="s1-t3" name="Search the product from search bar" line="10">
-<kw name="Search For Product" library="instruction">
+<test id="s1-t2" name="Searching and Adding the Product to the Cart and Deleting the Product from the Cart" line="10">
+<kw name="Search For Product" library="Resource">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Searchproduct}</arg>
-<arg>Phone</arg>
+<arg>${search}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:57.466" level="INFO">Typing text 'Phone' into text field 'xpath://*[@id='J_searchTxt']'.</msg>
-<status status="PASS" starttime="20220727 13:22:57.465" endtime="20220727 13:22:57.608"/>
+<msg timestamp="20220802 17:08:48.917" level="INFO">Typing text 'Phone' into text field 'xpath://*[@id='J_searchTxt']'.</msg>
+<status status="PASS" starttime="20220802 17:08:48.916" endtime="20220802 17:08:53.211"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ClickToSearch}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:22:57.609" level="INFO">Clicking element 'xpath://*[@class=' iconfont-search-24']'.</msg>
-<status status="PASS" starttime="20220727 13:22:57.608" endtime="20220727 13:23:00.073"/>
+<msg timestamp="20220802 17:08:53.214" level="INFO">Clicking element 'xpath://*[@class=' iconfont-search-24']'.</msg>
+<status status="PASS" starttime="20220802 17:08:53.211" endtime="20220802 17:08:58.004"/>
 </kw>
-<status status="PASS" starttime="20220727 13:22:57.465" endtime="20220727 13:23:00.073"/>
+<status status="PASS" starttime="20220802 17:08:48.915" endtime="20220802 17:08:58.004"/>
 </kw>
-<status status="PASS" starttime="20220727 13:22:57.463" endtime="20220727 13:23:00.075"/>
-</test>
-<test id="s1-t4" name="Add the product to the cart" line="12">
-<kw name="Add Product to cart" library="instruction">
+<kw name="Add Product to cart" library="Resource">
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${Product}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20220727 13:23:00.080" endtime="20220727 13:23:00.439"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:03.449" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:00.439" endtime="20220727 13:23:03.449"/>
+<status status="PASS" starttime="20220802 17:08:58.008" endtime="20220802 17:09:00.529"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Product}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:03.450" level="INFO">Clicking element 'xpath://a[normalize-space()='Xiaomi 11T Pro 5G Meteorite Black 8GB+128GB']'.</msg>
-<status status="PASS" starttime="20220727 13:23:03.450" endtime="20220727 13:23:03.567"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:06.577" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:03.567" endtime="20220727 13:23:06.577"/>
+<msg timestamp="20220802 17:09:00.529" level="INFO">Clicking element 'xpath://a[normalize-space()='Xiaomi 11T Pro 5G Meteorite Black 8GB+128GB']'.</msg>
+<status status="PASS" starttime="20220802 17:09:00.529" endtime="20220802 17:09:02.665"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Buy}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:06.578" level="INFO">Clicking element 'xpath://*[@id='nav-buy_now']'.</msg>
-<status status="PASS" starttime="20220727 13:23:06.577" endtime="20220727 13:23:12.111"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:15.112" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:12.111" endtime="20220727 13:23:15.112"/>
+<msg timestamp="20220802 17:09:02.666" level="INFO">Clicking element 'id:nav-buy_now'.</msg>
+<status status="PASS" starttime="20220802 17:09:02.666" endtime="20220802 17:09:11.502"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${PinCode}</arg>
-<arg>440008</arg>
+<arg>${Pincode1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:15.113" level="INFO">Typing text '440008' into text field 'xpath://*[@id='pinCodeCheckInput']'.</msg>
-<status status="PASS" starttime="20220727 13:23:15.112" endtime="20220727 13:23:15.313"/>
+<msg timestamp="20220802 17:09:11.502" level="INFO">Typing text '440008' into text field 'xpath://*[@id='pinCodeCheckInput']'.</msg>
+<status status="PASS" starttime="20220802 17:09:11.502" endtime="20220802 17:09:14.688"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${VerifyPinCode}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:15.315" level="INFO">Clicking button 'xpath://button[normalize-space()='Check']'.</msg>
-<status status="PASS" starttime="20220727 13:23:15.314" endtime="20220727 13:23:15.519"/>
+<msg timestamp="20220802 17:09:14.688" level="INFO">Clicking button 'xpath://button[normalize-space()='Check']'.</msg>
+<status status="PASS" starttime="20220802 17:09:14.688" endtime="20220802 17:09:19.924"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${SelectModel}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:15.520" level="INFO">Clicking button 'xpath://button[@aria-label='8GB+256GB']'.</msg>
-<status status="PASS" starttime="20220727 13:23:15.519" endtime="20220727 13:23:15.941"/>
+<msg timestamp="20220802 17:09:19.924" level="INFO">Clicking button 'xpath://button[@aria-label='8GB+256GB']'.</msg>
+<status status="PASS" starttime="20220802 17:09:19.924" endtime="20220802 17:09:25.182"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${SelectColour}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:15.942" level="INFO">Clicking button 'xpath://*[@aria-label='Meteorite Black']'.</msg>
-<status status="PASS" starttime="20220727 13:23:15.941" endtime="20220727 13:23:16.271"/>
+<msg timestamp="20220802 17:09:25.183" level="INFO">Clicking button 'xpath://*[@aria-label='Meteorite Black']'.</msg>
+<msg timestamp="20220802 17:09:31.554" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220802 17:09:31.555" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="sku-section__button" aria-label="Meteorite Black"&gt;...&lt;/button&gt; is not clickable at point (981, 581). Other element would receive the click: &lt;section class="product__section bundle-section"&gt;...&lt;/section&gt;
+  (Session info: chrome=103.0.5060.134)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x01045FD3+2187219]
+	Ordinal0 [0x00FDE6D1+1763025]
+	Ordinal0 [0x00EF3E78+802424]
+	Ordinal0 [0x00F2834B+1016651]
+	Ordinal0 [0x00F26318+1008408]
+	Ordinal0 [0x00F2401B+999451]
+	Ordinal0 [0x00F22D69+994665]
+	Ordinal0 [0x00F189B3+952755]
+	Ordinal0 [0x00F3CB8C+1100684]
+	Ordinal0 [0x00F18394+951188]
+	Ordinal0 [0x00F3CDA4+1101220]
+	Ordinal0 [0x00F4CFC2+1167298]
+	Ordinal0 [0x00F3C9A6+1100198]
+	Ordinal0 [0x00F16F80+946048]
+	Ordinal0 [0x00F17E76+949878]
+	GetHandleVerifier [0x012E90C2+2721218]
+	GetHandleVerifier [0x012DAAF0+2662384]
+	GetHandleVerifier [0x010D137A+526458]
+	GetHandleVerifier [0x010D0416+522518]
+	Ordinal0 [0x00FE4EAB+1789611]
+	Ordinal0 [0x00FE97A8+1808296]
+	Ordinal0 [0x00FE9895+1808533]
+	Ordinal0 [0x00FF26C1+1844929]
+	BaseThreadInitThunk [0x75E3FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77987A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77987A6E+238]
+</msg>
+<status status="FAIL" starttime="20220802 17:09:25.182" endtime="20220802 17:09:31.576"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${BUYNOw2}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:16.272" level="INFO">Clicking button 'xpath://*[@class='add-cart-section__btn add-cart-section__submit add-cart-section__submit--main']'.</msg>
-<status status="PASS" starttime="20220727 13:23:16.271" endtime="20220727 13:23:16.576"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:19.581" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:16.576" endtime="20220727 13:23:19.581"/>
+<status status="NOT RUN" starttime="20220802 17:09:31.576" endtime="20220802 17:09:31.576"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${AnotherProduct}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:19.582" level="INFO">Clicking element 'xpath://li[@title='Mi Smart Band 5']//a[@class='btn btn-buy btn-orange btn-small J_addAcc'][normalize-space()='Add to Cart']'.</msg>
-<status status="PASS" starttime="20220727 13:23:19.581" endtime="20220727 13:23:19.759"/>
+<status status="NOT RUN" starttime="20220802 17:09:31.576" endtime="20220802 17:09:31.576"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Nextbutton}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:19.759" level="INFO">Clicking element 'xpath://a[normalize-space()='Next']'.</msg>
-<status status="PASS" starttime="20220727 13:23:19.759" endtime="20220727 13:23:19.976"/>
+<status status="NOT RUN" starttime="20220802 17:09:31.577" endtime="20220802 17:09:31.577"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:22.979" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:19.977" endtime="20220727 13:23:22.979"/>
+<status status="FAIL" starttime="20220802 17:08:58.005" endtime="20220802 17:09:31.577"/>
 </kw>
-<status status="PASS" starttime="20220727 13:23:00.079" endtime="20220727 13:23:22.979"/>
+<kw name="Delete the Product from cart" library="Resource">
+<status status="NOT RUN" starttime="20220802 17:09:31.578" endtime="20220802 17:09:31.578"/>
 </kw>
-<status status="PASS" starttime="20220727 13:23:00.078" endtime="20220727 13:23:22.980"/>
+<status status="FAIL" starttime="20220802 17:08:48.913" endtime="20220802 17:09:31.579">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="sku-section__button" aria-label="Meteorite Black"&gt;...&lt;/button&gt; is not clickable at point (981, 581). Other element would receive the click: &lt;section class="product__section bundle-section"&gt;...&lt;/section&gt;
+  (Session info: chrome=103.0.5060.134)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x01045FD3+2187219]
+	Ordinal0 [0x00FDE6D1+1763025]
+	Ordinal0 [0x00EF3E78+802424]
+	Ordinal0 [0x00F2834B+1016651]
+	Ordinal0 [0x00F26318+1008408]
+	Ordinal0 [0x00F2401B+999451]
+	Ordinal0 [0x00F22D69+994665]
+	Ordinal0 [0x00F189B3+952755]
+	Ordinal0 [0x00F3CB8C+1100684]
+	Ordinal0 [0x00F18394+951188]
+	Ordinal0 [0x00F3CDA4+1101220]
+	Ordinal0 [0x00F4CFC2+1167298]
+	Ordinal0 [0x00F3C9A6+1100198]
+	Ordinal0 [0x00F16F80+946048]
+	Ordinal0 [0x00F17E76+949878]
+	GetHandleVerifier [0x012E90C2+2721218]
+	GetHandleVerifier [0x012DAAF0+2662384]
+	GetHandleVerifier [0x010D137A+526458]
+	GetHandleVerifier [0x010D0416+522518]
+	Ordinal0 [0x00FE4EAB+1789611]
+	Ordinal0 [0x00FE97A8+1808296]
+	Ordinal0 [0x00FE9895+1808533]
+	Ordinal0 [0x00FF26C1+1844929]
+	BaseThreadInitThunk [0x75E3FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77987A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77987A6E+238]
+</status>
 </test>
-<test id="s1-t5" name="Delete the product from cart" line="14">
-<kw name="Delete the Product from cart" library="instruction">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${Delete}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:22.986" level="INFO">Clicking button 'xpath://*[@class='cart__footer-delete']'.</msg>
-<status status="PASS" starttime="20220727 13:23:22.985" endtime="20220727 13:23:23.129"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220727 13:23:26.137" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220727 13:23:23.129" endtime="20220727 13:23:26.137"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConfirmDelete}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220727 13:23:26.138" level="INFO">Clicking element 'xpath://div[@class='mi-modal__button mi-modal__button--confirm']'.</msg>
-<status status="PASS" starttime="20220727 13:23:26.137" endtime="20220727 13:23:26.328"/>
-</kw>
-<status status="PASS" starttime="20220727 13:23:22.984" endtime="20220727 13:23:26.329"/>
-</kw>
-<status status="PASS" starttime="20220727 13:23:22.983" endtime="20220727 13:23:26.330"/>
-</test>
-<status status="PASS" starttime="20220727 13:22:39.447" endtime="20220727 13:23:26.332"/>
+<status status="FAIL" starttime="20220802 17:08:21.826" endtime="20220802 17:09:31.586"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" skip="0" id="s1" name="TC 1">TC 1</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="TC 1">TC 1</stat>
 </suite>
 </statistics>
 <errors>
